@@ -42,3 +42,13 @@ body.b-wood3 cg-board{background-image:url(boards/wood3.jpg)!important}
 cg-board square.last-move{background-color:rgba(155,199,0,.38)}
 coords coord{color:#f0d9b5!important;text-shadow:0 1px 2px #000}
 #theme{background:var(--p2);color:var(--t);border:1px solid var(--b);border-radius:7px;padding:6px}
+
+#mpv,#exDb,.grid select,.grid input{background:#111317;color:var(--t);border:1px solid var(--b);border-radius:6px;padding:3px 5px;font:inherit;font-size:12px}
+#explorer table{width:100%;border-collapse:collapse;font-size:12.5px}#explorer td{padding:3px 4px;border-bottom:1px solid var(--b)}#explorer tr.mvrow{cursor:pointer}#explorer tr.mvrow:hover{background:var(--p2)}
+.wdb{display:flex;height:14px;border-radius:3px;overflow:hidden;min-width:120px;font-size:9px;line-height:14px;text-align:center}.wdb i{font-style:normal}.wdb .w{background:#eee;color:#222}.wdb .d{background:#777}.wdb .b{background:#222;color:#ddd}
+.opening{color:var(--a);font-size:12.5px;margin-bottom:4px}
+details{margin-top:8px;border-top:1px solid var(--b);padding-top:6px}summary{cursor:pointer;color:#cfd4da}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:8px;font-size:12px;color:var(--m)}.grid label{display:flex;flex-direction:column;gap:2px}.grid .chk{flex-direction:row;align-items:center;gap:6px;color:var(--t)}
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}.lesson{background:var(--p2);border:1px solid var(--b);border-radius:10px;padding:12px;cursor:pointer;transition:.15s}.lesson:hover{border-color:var(--a);transform:translateY(-2px)}.lesson h4{margin:0 0 4px;color:var(--a)}.lesson p{margin:0;color:var(--m);font-size:12px}
+#comment{min-height:90px}
+#moves{overflow-x:hidden;overflow-wrap:break-word}.mv,.num{white-space:nowrap}

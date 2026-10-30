@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="chessground.base.css"><link rel="stylesheet" href="chessground.brown.css"><link rel="stylesheet" href="chessground.cburnett.css">
 <link rel="stylesheet" href="style.css"></head><body>
 <header><div class="logo">♞ <b>Grokie</b> Chess Studio</div>
-<div class="hbtns"><button id="bNew">Nuevo</button><button id="bFlip">⇅ Girar</button><button id="bImport">Importar PGN</button><button id="bExport">Exportar PGN</button><button id="bSave">💾 Guardar</button><button id="bOnline">🌐 Mis partidas</button><select id="theme" title="Tablero"><option value="wood4">Madera nogal</option><option value="wood">Madera clásica</option><option value="wood2">Madera oscura</option><option value="wood3">Madera clara</option></select></div></header>
+<div class="hbtns"><button id="bNew">Nuevo</button><button id="bFlip">⇅ Girar</button><button id="bImport">Importar PGN</button><button id="bExport">Exportar PGN</button><button id="bSave">💾 Guardar</button><button id="bOnline">🌐 Mis partidas</button><button id="bLib">📚 Biblioteca</button><select id="theme" title="Tablero"><option value="wood4">Madera nogal</option><option value="wood">Madera clásica</option><option value="wood2">Madera oscura</option><option value="wood3">Madera clara</option></select></div></header>
 <main>
 <section class="boardwrap"><div id="evalbar"><div id="evalfill"></div><span id="evaltxt">0.0</span></div>
 <div class="bcol"><div id="board"></div>
@@ -11,7 +11,18 @@
 <div class="hint">Clic derecho + arrastrar = flecha · clic derecho = casilla · Shift/Alt/Ctrl cambian color</div>
 <div class="colors" id="colors"></div></div></section>
 <section class="side">
-<div class="card engine"><div class="ehead"><label class="sw"><input type="checkbox" id="engOn" checked> Stockfish 19</label><span id="depth">prof. –</span></div><div id="lines"></div></div>
+<div class="card engine"><div class="ehead"><label class="sw"><input type="checkbox" id="engOn" checked> Stockfish 19</label><span><select id="mpv" title="Líneas del motor"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select> líneas · <span id="depth">prof. –</span></span></div><div id="lines"></div></div>
+<div class="card"><div class="ehead"><span class="ctitle" style="margin:0">Explorador de aperturas</span><select id="exDb"><option value="masters">Maestros</option><option value="lichess">Lichess (2000+)</option></select></div>
+<div id="explorer"></div>
+<details id="gen"><summary>⚙️ Generador de aperturas</summary>
+<div class="grid"><label>Modo <select id="gMode"><option value="mix">Mixto</option><option value="db">Base de datos</option><option value="eng">Motor</option></select></label>
+<label>Repertorio para <select id="gSide"><option value="auto">quien mueve</option><option value="w">Blancas</option><option value="b">Negras</option></select></label>
+<label>Profundidad (jugadas) <input id="gDepth" type="number" min="1" max="10" value="5"></label>
+<label>Respuestas rivales <input id="gBreadth" type="number" min="1" max="4" value="2"></label>
+<label>Margen motor (cp) <input id="gThr" type="number" min="0" max="300" value="70"></label>
+<label class="chk"><input type="checkbox" id="gAggr" checked> 🔥 Estilo agresivo</label></div>
+<div class="row"><button id="gGo" class="pri">Generar desde aquí</button><button id="gStop">Detener</button><button id="gSave">💾 Guardar repertorio</button></div><div id="gLog" class="num"></div></details>
+<details id="tokbox"><summary>🔑 Token de Lichess (necesario para el explorador)</summary><p class="num">Lichess exige iniciar sesión para su explorador. Crea un token personal gratis (sin permisos) <a target="_blank" href="https://lichess.org/account/oauth/token/create?description=Grokie%20Chess%20Studio">aquí</a> y pégalo. Se guarda solo en este navegador.</p><div class="row"><input id="tok" type="password" placeholder="lip_..." style="flex:1"><button id="tokSave">Guardar</button></div></details></div>
 <div class="card"><div class="ctitle" id="gtitle">Partida</div><div id="moves"></div></div>
 <div class="card"><div class="ctitle">Comentario de la jugada</div>
 <div class="nags" id="nags"></div><div class="tags" id="tags"></div>

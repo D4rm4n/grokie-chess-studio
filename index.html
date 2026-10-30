@@ -1,0 +1,23 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grokie Chess Studio</title>
+<link rel="stylesheet" href="chessground.base.css"><link rel="stylesheet" href="chessground.brown.css"><link rel="stylesheet" href="chessground.cburnett.css">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="logo">♞ <b>Grokie</b> Chess Studio</div>
+<div class="hbtns"><button id="bNew">Nuevo</button><button id="bFlip">⇅ Girar</button><button id="bImport">Importar PGN</button><button id="bExport">Exportar PGN</button><button id="bSave">💾 Guardar</button><button id="bOnline">🌐 Mis partidas</button><select id="theme" title="Tablero"><option value="wood4">Madera nogal</option><option value="wood">Madera clásica</option><option value="wood2">Madera oscura</option><option value="wood3">Madera clara</option></select></div></header>
+<main>
+<section class="boardwrap"><div id="evalbar"><div id="evalfill"></div><span id="evaltxt">0.0</span></div>
+<div class="bcol"><div id="board"></div>
+<div class="nav"><button data-n="start">⏮</button><button data-n="prev">◀</button><button data-n="next">▶</button><button data-n="end">⏭</button></div>
+<div class="hint">Clic derecho + arrastrar = flecha · clic derecho = casilla · Shift/Alt/Ctrl cambian color</div>
+<div class="colors" id="colors"></div></div></section>
+<section class="side">
+<div class="card engine"><div class="ehead"><label class="sw"><input type="checkbox" id="engOn" checked> Stockfish 19</label><span id="depth">prof. –</span></div><div id="lines"></div></div>
+<div class="card"><div class="ctitle" id="gtitle">Partida</div><div id="moves"></div></div>
+<div class="card"><div class="ctitle">Comentario de la jugada</div>
+<div class="nags" id="nags"></div><div class="tags" id="tags"></div>
+<textarea id="comment" placeholder="Planes, tácticas, trampas..."></textarea>
+<div class="row"><button id="bDelVar">Borrar desde aquí</button><button id="bPromote">Promover variante</button><button id="bClearShapes">Limpiar flechas</button></div></div>
+<div class="card"><div class="ctitle">Estudios guardados</div><div id="studies"></div></div>
+</section></main>
+<dialog id="dlg"><div id="dlgbody"></div><div class="row"><button id="dlgOk" class="pri">Aceptar</button><button id="dlgCancel">Cerrar</button></div></dialog>
+<script src="app.js"></script></body></html>
